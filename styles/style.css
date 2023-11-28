@@ -83,6 +83,18 @@
   line-height: 18px; /* 100% */
 }
 
+.header__theme-menu-button:hover {
+  border: 1px solid var(--color);
+}
+
+.header__theme-menu-button:focus {
+  border: none;
+}
+
+.header__theme-menu-button:has(:focus-visible) {
+  border-bottom: 1px solid var(--color);
+}
+
 .header__theme-menu-button_active {
   border: 1px solid var(--color);
   pointer-events: none;
@@ -152,7 +164,24 @@
 
 .concentrate__link {
   text-decoration: none;
+  color: var(--text-color);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.concentrate__link:hover {
+  text-decoration-line: underline;
+}
+
+.concentrate__link:focus {
+  text-decoration-line: none;
+}
+
+.concentrate__link:has(:focus-visible) {
+  text-decoration-line: underline;
 }
 
 .title {
