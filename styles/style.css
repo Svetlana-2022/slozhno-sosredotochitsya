@@ -33,7 +33,7 @@
   display: grid;
   grid-template-rows: min-content 1fr 1fr 1fr min-content;
   gap: 10px;
-  block-size: 668px;
+  min-block-size: 100vh;
   position: relative;
 }
 
@@ -149,8 +149,17 @@
   inline-size: 15px;
   block-size: 15px;
   background-color: var(--color-bulb);
+  box-shadow: 0 0 15px 3px currentColor;
+  opacity: 1;
   border-radius: 50%;
   margin: 0 5px;
+}
+
+/* Чтобы уважать желание пользователя и не показывать ему анимации там, где они не критичны и несут декоративный характер, нужно использовать проверку параметра */
+@media (prefers-reduced-motion: no-preference) {
+  .header__bulb::after {
+    animation: change-color 0.5s infinite;
+  }
 }
 
 /* main */
@@ -238,13 +247,14 @@
 
 .pictures__img {
   inline-size: 100%;
+  object-fit: cover;
 }
 
 /* footer */
 
 .footer {
   inline-size: 100%;
-  min-block-size: 668px;
+  min-block-size: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
@@ -361,5 +371,17 @@
   .attention__item {
     grid-column: span 1;
     grid-row: 2 / 3;
+  }
+}
+
+@keyframes change-color {
+  from {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
   }
 }
