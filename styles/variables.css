@@ -13,3 +13,15 @@
   --main-font: 'IBM Plex mono';
   --img-url: url(../images/cover-image.png);
 }
+
+/* Сделаем так, чтобы значение переменных в body изменялось автоматически, от предпочитаемой темы пользователя */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --color: #ff0070;
+    --title-color: #DB00FF;
+    --accent-title-color: #000028;
+    --text-color: #F1B2CE;
+    --accent-color: #ff0070;
+  }
+}

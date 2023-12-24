@@ -13,7 +13,7 @@
 }
 
 /* Сделаем так, чтобы значение переменных в body изменялось автоматически, от предпочитаемой темы пользователя */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     --bg-color: #000028;
     --color: #ff0070;
@@ -22,7 +22,7 @@
     --text-color: #F1B2CE;
     --accent-color: #ff0070;
   }
-}
+} */
 
 .content-section {
   padding: 10px;
